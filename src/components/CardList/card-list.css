@@ -1,0 +1,12 @@
+div.ui.segment {
+	/* Semantic UI has odd margins occasionally */
+	margin: 14px !important; 
+	padding: 10px;
+}
+
+.card-list {
+	min-height: 80vh;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+}

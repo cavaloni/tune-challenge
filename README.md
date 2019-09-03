@@ -1,28 +1,38 @@
-# TUNE Front End Coding Challenge
+# Tune coding challenge
 
-## The Setup
+Uses create-react-app with typescript for speedy development and avoiding overhead of webpack configuration.
 
-Two sets of data are attached that represent 30 days of impressions, conversions, and revenue, as well as the user accounts associated with the activity.
 
-`users.json`
+### Starting server
+This assumes that you have Yarn installed <https://yarnpkg.com/en/>
 
-An array of user objects. Each user has an id, name, avatar, and occupation.
+Once installed, run it in the root directory to install dependencies:
 
-`logs.json`
+`yarn`
 
-Event information about the traffic. Each item has a type (either 'impression' or 'conversion'), date and time of the event, user ID of the account the event is related to, and any revenue associated.
+Then start the node server, by running:
+`yarn server`
 
-## The Task
+Finally, start the react development server:
+`yarn start`
 
-Write a client-side application that implements the attached mockup in the framework of your choice, using any libraries that are appropriate. The provided mockup is just a guide. Feel free to improve the design within the requirements:
+This will automatically open a tab in your browser pointed to localhost:3000
 
-* Each card should have the user's avatar, name, and occupation. For users with no image avatar, display the first letter of their first name in place of an image.
 
-* Each card should display the sum of all impressions, conversions, and revenue.
+## Notes/Assumptions
 
-* Each card should display a simple chart of of conversions per day.
+__Important!__
+Tests were not finished due to time constraints. I spent a bit of extra time on some other things. There was only one test file created and that was for the app.jsx file. I put this test in here for good faith for my interest in testing. To run the single lonesome test run `yarn test`. An error does remain on that test, and that is because I could not isolate the component using shallow mount because the "useEffect" of react hooks (see below) is not yet supported in shallow, therfore forcing the usage of mount (for now) and causing some errors down the line. However, the tests pass.
 
-## Bonus Items
+Also important to note is that the structure utilizes Reacts new "hooks", which replaces the usage of classes and reduces complexity of lifecycle methods. See more at <https://reactjs.org/docs/hooks-intro.html> So this could be considered an assumption of some degree of familiarity of the latest React patterns.
 
-* Implement the ability for the user to sort the cards by name and by total impressions, conversions, or revenue
-* Write unit tests for testable portions of your code
+Also important is that I created a node/express server for this project. It seemed to me that a 7500 KB file sent across the wire was a bit large and warranted a separation of concerns, at least in demonstration of my thinking anyway (since the file would not get any larger). I didnt setup a DB to save time for both me and the installer on your end. It also does the heavy lifting with the data, since that made sense anyway for the consumption of mapped data on the front end.
+
+Other extras: Pagination, sorting, and ordering (ascending, descending)
+
+#### Dev dependency notes
+I personally like to use Prettier to reduce the arguments about code style. You can learn more here: <prettier.io>
+
+I also used a charting library that I hand't used before because it seemed quick and easy. And it was :)
+
+

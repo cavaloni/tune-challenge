@@ -1,0 +1,62 @@
+.segment-padding {
+	padding: 20px !important;
+}
+
+.empty {
+	text-align: center;
+	line-height: 80px;
+	font-size: 40px;
+	height: 80px;
+	width: 80px;
+	border-radius: 50%;
+	color: white;
+	float: left;
+}
+
+.right-header-info {
+	text-align: center;
+}
+
+.occupation {
+	color: grey;
+	font-size: 15px;
+}
+
+.lower-card-contents {
+	clear: left;
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+}
+
+.chart-container {
+	margin-top: 20px;
+	grid-row-start: 1;
+	grid-row-end: 4;
+}
+
+.user-data-snippet {
+	text-align: end;
+}
+
+.data-text {
+	color: lightgray;
+}
+
+.conversions {
+	color: #FF9800;
+}
+
+.impressions {
+	color: #0277BD;
+}
+
+.conversions, .impressions {
+	font-size: 20px;
+}
+
+.revenue {
+	margin-top: 10px;
+	font-size: 24px;
+	color: #388E3C;
+}
